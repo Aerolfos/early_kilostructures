@@ -1,4 +1,4 @@
-[u]Updated to 3.8, and should work for all subsequent sub-versions of 3.8.[/u]
+[u]Updated to 3.9, and should work for all subsequent sub-versions of 3.9.[/u]
 
 This mod makes the Maginot Global Bunker System building available earlier.
 
