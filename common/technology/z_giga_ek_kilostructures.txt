@@ -1,0 +1,243 @@
+#######################
+### Physics ###########
+#######################
+
+### Particles ###
+giga_tech_particle_accelerator = {
+	cost = @tier3cost2
+	area = physics
+	category = { particles }
+	tier = 3
+	is_rare = no
+	prerequisites = { "tech_antimatter_power" "tech_starbase_3" }
+	weight = @tier3weight2
+	prereqfor_desc = {
+		custom = { title = "allow_particle_accel"	desc = "desc_particle_accel" }
+	}
+	modifier = {
+		country_resource_max_add = 2500
+		ship_shield_mult = 0.05
+	}
+
+	weight_modifier = {
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = physics has_trait = "leader_trait_expertise_particles" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = giga_tech_particle_accelerator
+			}
+		}
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_particle_accelerator }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium	# Science is okay
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = physics has_trait = "leader_trait_expertise_particles" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}
+
+# no longer a mega
+giga_tech_kugelblitz = {
+	cost = @tier4cost2
+	area = physics
+	category = { particles }
+	tier = 4
+	is_rare = no
+	prerequisites = { "giga_tech_particle_accelerator" "tech_zero_point_power" "giga_tech_engineering_test_site" }
+	weight = @tier4weight1
+	prereqfor_desc = {
+		custom = { title = "allow_kugelblitz"	desc = "desc_kugelblitz" }
+	}
+	modifier = { country_resource_max_add = 5000 }
+
+	weight_modifier = {
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = physics has_trait = "leader_trait_expertise_particles" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_kugelblitz }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium	# Low cost + Energy + Storage + No Logic
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = physics has_trait = "leader_trait_expertise_particles" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}
+
+# no longer rare tech
+giga_tech_penrose_sphere_1 = {
+	cost = @tier2cost3
+	area = physics
+	tier = 3
+	category = { particles }
+	is_rare = no
+	prerequisites = { "giga_tech_particle_accelerator" "tech_zero_point_power" "tech_mega_engineering" }
+	weight = @tier3weight2
+	prereqfor_desc = {
+		custom = { title = "allow_penrose"	desc = "desc_penrose_sphere" }
+	}
+	modifier = { planet_jobs_energy_produces_mult = 0.05 }			# Incase this tech's megastructure is disabled
+
+	weight_modifier = {
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = physics has_trait = "leader_trait_expertise_particles" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_penrose_sphere_1 }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_strong	# Decent Mega
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = physics has_trait = "leader_trait_expertise_particles" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}
+
+#######################
+### Society ###########
+#######################
+
+### Biology ###
+giga_tech_orbital_artificial_eco = {
+	cost = @tier2cost1
+	area = society
+	category = { biology }
+	tier = 2
+	is_rare = no
+	prerequisites = { "tech_terrestrial_sculpting" "tech_starbase_3" }
+	weight = @tier2weight1
+	prereqfor_desc = {
+		custom = { title = "allow_orbital_artificial_eco"	desc = "desc_orbital_artificial_eco" }
+	}
+	modifier = {
+		country_resource_max_add = 2500
+		terraform_speed_mult = 0.05
+	}
+
+	weight_modifier = {
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = society has_trait = "leader_trait_expertise_biology" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = giga_tech_orbital_artificial_eco
+			}
+		}
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_orbital_artificial_eco }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium	# Science is good.
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = society has_trait = "leader_trait_expertise_biology" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}
+
+# slight buff, non-rare and cheaper because it's kinda weak
+giga_tech_yggdrasil_orchid = {
+	cost = @tier4cost3
+	area = society
+	category = { biology }
+	tier = 4
+	is_rare = no
+	prerequisites = { "tech_starbase_4" "tech_mega_engineering" "tech_terrestrial_sculpting" "giga_tech_orbital_artificial_eco" }
+	weight = @tier4weight1
+	prereqfor_desc = {
+		custom = { title = "allow_yggdrasil"	desc = "desc_yggdrasil" }
+	}
+	modifier = { planet_jobs_food_produces_mult = 0.05 }			# Incase this tech's megastructure is disabled
+
+	weight_modifier = {
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = society has_trait = "leader_trait_expertise_biology" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_yggdrasil_orchid }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium	# Resources good
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = society has_trait = "leader_trait_expertise_biology" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}
+
+#######################
+### Engineering #######
+#######################
+
+### Materials ###
+# that's right, everything doesn't have to be voidcraft.
+giga_tech_engineering_test_site = {
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { materials }
+	prerequisites = { "tech_starbase_4" "tech_ship_armor_3" "tech_planetary_infrastructure_1" }
+	weight = @tier3weight3
+	is_rare = no
+	prereqfor_desc = {
+		custom = { title = "allow_eng_test_site"	desc = "desc_eng_test_site" }
+	}
+	modifier = {
+		country_resource_max_add = 2500
+		ship_armor_mult = 0.05
+	}
+
+	weight_modifier = {
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = engineering has_trait = "leader_trait_expertise_voidcraft" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = giga_tech_engineering_test_site
+			}
+		}
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_engineering_test_site }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium	# Science is good.
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = engineering has_trait = "leader_trait_expertise_voidcraft" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}

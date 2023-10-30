@@ -1,0 +1,46 @@
+########################
+### Military Theory ####
+########################
+
+# Early bunker
+giga_tech_maginot_fort_complex = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { military_theory }
+	is_rare = no
+	prerequisites = { "tech_global_defense_grid" }
+	weight = @tier3weight1
+	
+	# unlocks Maginot Fort Complex
+
+	modifier = {
+		army_defense_health_mult = 0.25
+		army_defense_morale_mult = 0.25
+	}
+
+	weight_modifier = {
+		modifier = { factor = 2 is_militarist = yes }
+		modifier = { factor = value:tech_weight_likelihood research_leader = { area = society has_trait = "leader_trait_expertise_military_theory" } }
+		modifier = { factor = 1.5 has_active_tradition = tr_unyielding_adopt } # boosted by defence focus
+		modifier = { factor = 1.5 has_ascension_perk = ap_eternal_vigilance }
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_maginot_fort_complex }
+			}
+		}
+		modifier = { factor = 0     has_global_flag = maginot_disabled }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_strong # AI wants this since its early
+		modifier = { factor = 2 is_militarist = yes }
+		modifier = { factor = 1.25 research_leader = { area = society has_trait = "leader_trait_expertise_military_theory" } }
+		modifier = { factor = 1.5 has_active_tradition = tr_unyielding_adopt }
+		modifier = { factor = 1.5 has_ascension_perk = ap_eternal_vigilance }
+		modifier = { factor = 0   has_global_flag = maginot_disabled }
+	}
+}

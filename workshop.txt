@@ -1,0 +1,7 @@
+[u]Updated to 3.8, and should work for all subsequent sub-versions of 3.8.[/u]
+
+This mod makes the Maginot Global Bunker System building available earlier.
+
+The three kilos are available earlier, and cost less to research, like the orbital ring. The tech also "spreads" (weight boost if neighbour has tech) like the ring. Tweaks some of the weaker megastructures to no longer be rare techs.
+
+Intended for tweaking multiplayer games, not common use.

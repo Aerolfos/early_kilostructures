@@ -1,0 +1,15 @@
+﻿l_english:
+ #################
+ ### Buildings ###
+ #################
+ building_giga_maginot_stronghold:0 "Maginot Fort Complex"
+ building_giga_maginot_stronghold_desc:0 "New techniques within the field of excessive fortification enables the construction of complexes like this one. It should now be possible to extend these defences to cover the whole planet."
+
+ building_giga_maginot_global_bunker:0 "Maginot Global Bunker System"
+ building_giga_maginot_global_bunker_desc:0 "A world-spanning system of deep bunkers gives our armies unprecedented strike power while on this world."
+
+ ##################
+ ### Technology ###
+ ##################
+ giga_tech_maginot_fort_complex:0 "Maginot Fort Complex"
+ giga_tech_maginot_fort_complex_desc:0 "In the spirit of our ancestors, ground defence must not be neglected. Strongpoints of critical importance shall receive only the finest fortifications our technology can provide."
